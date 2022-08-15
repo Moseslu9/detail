@@ -4,126 +4,183 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
+    <script
+      src="https://kit.fontawesome.com/8cf3632fc7.js"
+      crossorigin="anonymous"
+    ></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
 
-    <title>Frontend Mentor | Interactive card details form</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
   </head>
   <body>
-    <div id="mainbg"></div>
-
-    <div class="container">
-        <div class="card-img">
-          <img class="circle" src="./images/card-logo.svg" alt="" />
-          <img class="front" src="./images/bg-card-front.png" alt="" />
-          <h2 class="number">0000 0000 0000 0000</h2>
-          <p class="name">Jane Appleseed</p>
-          <span class="digits">00/00</span>
+    <main class="card-container">
+      <div class="left-coln">
+        <div class="overflow-hidden">
+          <img
+            class="one"
+            src="./images/illustration-woman-online-desktop.svg"
+            alt=""
+          />
+          <img class="two" src="./images/bg-pattern-desktop.svg" alt="" />
         </div>
+        <img class="three" src="./images/illustration-box-desktop.svg" alt="" />
 
-        <div class="card-img2">
-          <img class="back" src="./images/bg-card-back.png" alt="" />
-          <span class="digits2"> 000</span>
+        <div class="display-mobile">
+          <img
+            class="woman-online-mobile"
+            src="./images/illustration-woman-online-mobile.svg"
+            alt=""
+          />
+          <img
+            class="bg-pattern-mobile"
+            src="./images/bg-pattern-mobile.svg"
+            alt=""
+          />
         </div>
-    
+      </div>
+      <div class="right-coln">
+        <div class="right-content-container">
+          <h1 class="primary-heading">FAQ</h1>
+          <div class="container">
+            <ul class="accordion-list">
+              <li class="list">
+                <h2 class="button-heading question1">
+                  <button class="question">
+                    How many team members can I invite?
+                  </button>
+                  <button class="btn-arrow">
+                    <i class="icon-btn-down fa-solid fa-chevron-down"></i>
+                    <i class="icon-btn-up btn-hide fa-solid fa-chevron-up"></i>
+                  </button>
+                </h2>
+                <div class="answer answer1">
+                  <p class="a-text">
+                    You can invite up to 2 additional users on the Free plan.
+                    There is no limit on team members for the Premium plan.
+                  </p>
+                </div>
+            
+              </li>
+              <li class="list">
+                <h2 class="button-heading question2">
+                  <button class="question">
+                    What is the maximum file upload size?
+                  </button>
+                  <button class="btn-arrow">
+                    <i class="icon-btn-down fa-solid fa-chevron-down"></i>
+                    <i class="icon-btn-up btn-hide fa-solid fa-chevron-up"></i>
+                  </button>
+                </h2>
+                <div class="answer answer2">
+                  <p class="a-text">
+                    No more than 2GB. All files in your account must fit your
+                    allotted storage space.
+                  </p>
+                </div>
+              </li>
 
-      <div id="right">
-        <p id="holdername" class="inputheading">Cardholder Name</p>
-        <span id="nameerror">Can't Be Blank</span>
-        <input
-          type="text"
-          id="nameinput"
-          class="carddetailstext"
-          placeholder=" e.g. Jane Appleseed"
-        />
-        <p id="cardnum" class="inputheading">Card Number</p>
-        <span id="cardnumerror">Only Numbers</span>
-        <span id="cardnumblankerror">Can't Be Blank</span>
-        <input
-          type="tel"
-          id="cardnuminput"
-          pattern="[0-9\s]{13,19}"
-          minlength="16"
-          maxlength="19"
-          class="carddetailstext"
-          placeholder="1234 5678 9123 0000"
-        />
-        <p id="cardnum" class="inputheading">
-          Exp. Date (MM/YY) <span class="cvcttl inputheading">CVC</span>
-        </p>
+              <li class="list">
+                <h2 class="button-heading question3">
+                  <button class="question">How do I reset my password?</button>
+                  <button class="btn-arrow">
+                    <i class="icon-btn-down fa-solid fa-chevron-down"></i>
+                    <i class="icon-btn-up btn-hide fa-solid fa-chevron-up"></i>
+                  </button>
+                </h2>
+                <div class="answer answer3">
+                  <p class="a-text">
+                    Click “Forgot password” from the login page or “Change
+                    password” from your profile page. A reset link will be
+                    emailed to you.
+                  </p>
+                </div>
+              </li>
 
-        <div id="cardinputdetail">
-          <div id="cardexpdate">
-            <input
-              type="tel"
-              id="monthinput"
-              pattern="[1-9]"
-              minlength="1"
-              maxlength="2"
-              class="carddetailstext monthinput"
-              max="2"
-              placeholder="MM"
-            />
+              <li class="list">
+                <h2 class="button-heading question4">
+                  <button class="question">
+                    Can I cancel my subscription?
+                  </button>
+                  <button class="btn-arrow">
+                    <i class="icon-btn-down fa-solid fa-chevron-down"></i>
+                    <i class="icon-btn-up btn-hide fa-solid fa-chevron-up"></i>
+                  </button>
+                </h2>
+                <div class="answer answer4">
+                  <p class="a-text">
+                    Yes! Send us a message and we’ll process your request no
+                    questions asked.
+                  </p>
+                </div>
+              </li>
 
-            <input
-              type="tel"
-              id="yearinput"
-              pattern="[0-9]*"
-              minlength="1"
-              maxlength="2"
-              class="carddetailstext yearinput"
-              placeholder="YY"
-            />
+              <li class="list">
+                <h2 class="button-heading question5">
+                  <button class="question">
+                    Do you provide additional support?
+                  </button>
+                  <button class="btn-arrow">
+                    <i class="icon-btn-down fa-solid fa-chevron-down"></i>
+                    <i class="icon-btn-up btn-hide fa-solid fa-chevron-up"></i>
+                  </button>
+                </h2>
+                <div class="answer answer5">
+                  <p class="a-text">
+                    Chat and email support is available 24/7. Phone lines are
+                    open during normal business hours.
+                  </p>
+                </div>
+              </li>
+            </ul>
           </div>
-          <span id="mmyyerror">Can't Be Blank</span>
-
-          <p id="cvc">
-            <input
-              id="cvcinput"
-              type="tel"
-              pattern="[0-9]*"
-              minlength="3"
-              maxlength="3"
-              class="carddetailstext cvcinput"
-              placeholder="e.g. 123"
-            /><span id="cvcerror">Can't Be Blank</span>
-          </p>
         </div>
-        <button class="thankyou" id="btn">Confirm</button>
-
-
-
-
-
-        
       </div>
+    </main>
 
-      <img id="check" src="" alt="" />
-
-      <div id="thankyou-card">
-        Thank you!
-        <p id="thankyoumsg">We've added your card details</p>
-
-        <button   class="continuebtn"> Continue</button>
-      </div>
-
-    
-
-      <div class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">@MosesLu</a>.
-      </div>
+    <div class="attribution">
+      Challenge by
+      <a class="name" href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a class="name" href="#">MosesLu</a>.
     </div>
-  </body>
 
-  <script src="index.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="index.js"></script>
+  </body>
 </html>

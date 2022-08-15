@@ -1,88 +1,49 @@
-const button = document.getElementById("btn");
-const btncontinue = document.getElementsByName("continuebtn");
-const cardnumstrng = /[a-z]/;
-const nameInput = document.getElementById("nameinput");
-const cardNumInput = document.getElementById("cardnuminput");
-const MonthInput = document.getElementById("monthinput");
-const yearInput = document.getElementById("yearinput");
-const cvcInput = document.getElementById("cvcinput");
-const right = document.getElementById("right");
-const check = document.getElementById("check");
-const thankyouCard = document.getElementById("thankyou-card");
+"";
 
-// error-msges
+const question = document.querySelectorAll(".button-heading");
+const arrowdown = document.querySelectorAll(".icon-btn-down");
+const arrowup = document.querySelectorAll(".icon-btn-up");
 
-const nameError = document.getElementById("nameerror");
-const cardNumError = document.getElementById("cardnumerror");
-const myYearError = document.getElementById("mmyyerror");
-const cvcError = document.getElementById("cvcerror");
+question.forEach(list => {
+  list.addEventListener("click", function () {
+    for (let i = 0; i < question.length; i++) {
+      question[i].classList.remove("active");
+    }
 
-button.addEventListener("click", main);
-
-function main() {
-  if (nameInput.value == "") {
-    nameError.style.display = "block";
-    nameInput.style.borderColor = "red";
-  }
-
-  if (cardNumInput.value == "") {
-    cardNumError.style.display = "block";
-    cardNumInput.style.borderColor = "red";
-  }
-
-  if (MonthInput.value == "") {
-    myYearError.style.display = "block";
-    MonthInput.style.borderColor = "red";
-  }
-
-  if (yearInput.value == "") {
-    myYearError.style.display = "block";
-    yearInput.style.borderColor = "red";
-  }
-
-  if (cvcInput.value == "") {
-    cvcError.style.display = "block";
-    cvcInput.style.borderColor = "red";
-  } else {
-    right.style.display = "none";
-
-
+    console.log(this);
     
-    check.src = "./images/icon-complete.svg";
-    check.style.display = "block";
-    thankyouCard.style.display = "block";
-  }
-}
+    if (this.classList.contains("active")) {
+      this.classList.toggle("active");
+    } else {
+      this.classList.toggle("active");
+    }
 
-nameInput.addEventListener("input", removeError);
-cardNumInput.addEventListener("input", removeError);
-MonthInput.addEventListener("input", removeError);
-yearInput.addEventListener("input", removeError);
-cvcInput.addEventListener("input", removeError);
+    for (let i = 0; i < arrowdown.length; i++) {
+      if (question[i].classList.contains("active")) {
+        arrowdown[i].classList.add("btn-hide");
+        arrowup[i].classList.remove("btn-hide");
+      } else {
+        arrowdown[i].classList.remove("btn-hide");
+        arrowup[i].classList.add("btn-hide");
+      }
+    }
 
-function removeError() {
-  if (nameInput.value !== "") {
-    nameError.style.display = "none";
-    nameInput.style.borderColor = "hsl(279, 6%, 55%)";
-  }
+    if (this.classList.contains("active")) {
+      this.addEventListener("click", function () {
+        this.classList.toggle(`active`);
 
-  if (cardNumInput.value !== "") {
-    cardNumError.style.display = "none";
-    cardNumInput.style.borderColor = "hsl(279, 6%, 55%)";
-  }
-
-  if (MonthInput.value !== "") {
-    myYearError.style.display = "none";
-    MonthInput.style.borderColor = "hsl(279, 6%, 55%)";
-  }
-
-  if (yearInput.value !== "") {
-    myYearError.style.display = "none";
-    yearInput.style.borderColor = "hsl(279, 6%, 55%)";
-  }
-
-  if (cvcInput.value !== "") {
-    cvcError.style.display = "none";
-    cardNumInput.style.borderColor = "hsl(279, 6%, 55%)";
-  }
-}
+        for (let i = 0; i < arrowdown.length; i++) {
+          if (question[i].classList.contains(`active`)) {
+            arrowdown[i].classList.add(`btn-hide`);
+            arrowup[i].classList.remove(`btn-hide`);
+          } else {
+            arrowdown[i].classList.remove(`btn-hide`);
+            arrowup[i].classList.add(`btn-hide`);
+          }
+        }
+      });
+    } else {
+      this.classList.toggle(`active`);
+    }
+  });
+});
