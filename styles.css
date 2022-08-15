@@ -292,7 +292,6 @@ input[type="number"]::-webkit-outer-spin-button {
 @media (max-width: 600px) {
 
 body{
-  overflow-y: hidden;
   overflow-x: hidden;
 }
 
