@@ -292,11 +292,13 @@ input[type="number"]::-webkit-outer-spin-button {
 @media (max-width: 600px) {
 
 body{
+  width: 100vw;
   overflow-x: hidden;
+  height: 100vh;
 }
 
 #mainbg{
-  height: 100%;
+  height: 100vh;
   width: 100%;
   display: block;
   background-repeat: repeat-x;
@@ -361,7 +363,7 @@ font-size: 13;
   .attribution {
     font-size: 12px;
     margin-top: 206%;
-    margin-left: -97%;
+    margin-left: -66%;
   }
   .attribution a {
     text-decoration-line: none;
